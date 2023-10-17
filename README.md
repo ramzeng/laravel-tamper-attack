@@ -1,6 +1,6 @@
 <h1 align="center"> laravel-tamper-attack </h1>
 
-<p align="center"> laravel middleware to prevent tamper attacks..</p>
+<p align="center"> laravel middleware to prevent tamper attacks.</p>
 
 
 ## Installing
