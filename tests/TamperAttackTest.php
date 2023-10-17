@@ -33,7 +33,7 @@ class TamperAttackTest extends TestCase
 
         ksort($payloads);
 
-        $signature = sha1(sprintf('%s%s', http_build_query($payloads), $configRepository->get('tamper_attack.secret')));
+        $signature = hash_hmac('sha1', http_build_query($payloads), $configRepository->get('tamper_attack.secret'));
 
         $request = Request::create('http://localhost', 'GET', [
             ...$payloads,

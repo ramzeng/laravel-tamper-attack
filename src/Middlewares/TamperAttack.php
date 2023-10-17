@@ -36,7 +36,7 @@ class TamperAttack
 
         ksort($values);
 
-        $signature = sha1(sprintf('%s%s', http_build_query($values), $this->configRepository->get('tamper_attack.secret')));
+        $signature = hash_hmac('sha1', http_build_query($values), $this->configRepository->get('tamper_attack.secret'));
 
         return $signature === $request->query('signature');
     }
